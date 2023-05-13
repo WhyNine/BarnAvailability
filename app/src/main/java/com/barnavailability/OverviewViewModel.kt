@@ -19,7 +19,6 @@ package com.barnavailability
 import android.graphics.Color
 import android.text.Spannable
 import android.text.SpannableString
-import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -31,7 +30,6 @@ import org.jsoup.Jsoup
 import org.jsoup.nodes.Element
 import org.jsoup.select.Elements
 import java.text.SimpleDateFormat
-import java.time.LocalDate
 import java.util.*
 
 private const val MAXROOMS = 10
@@ -49,7 +47,6 @@ class OverviewViewModel : ViewModel() {
     private val _events = MutableLiveData<Array<Array<SpannableString>>>()
 
     // The external immutable LiveData used in the fragment
-    val status: LiveData<String> = _status
     val wbDate: LiveData<String> = _wbDate
     val roomNames: LiveData<Array<String>> = _roomNames
     val events: LiveData<Array<Array<SpannableString>>> = _events
@@ -100,21 +97,21 @@ class OverviewViewModel : ViewModel() {
     }
 
     private fun add_colour(str: String): SpannableString {
-        var spannable = SpannableString(str)
-        Log.d("spanning", str)
+        val spannable = SpannableString(str)
+//        Log.d("spanning", str)
         var count = 0
         for (line in str.split("\n")) {
-            Log.d("spanning", count.toString())
+//            Log.d("spanning", count.toString())
             val splitStr = line.split(":")
             if (splitStr.size > 1) {
                 val start1 = count
-                var end1 = splitStr[0].length + 3 + count
+                val end1 = splitStr[0].length + 3 + count
                 var start2 = splitStr[0].length + 1 + splitStr[1].length - 2 + count
                 if (str[start2] == ' ') {
                     start2++
                 }
                 val end2 = line.length + count
-                Log.d("spanning", line + " " + start1 + " " + end1 + " " + start2 + " " + end2)
+//                Log.d("spanning", line + " " + start1 + " " + end1 + " " + start2 + " " + end2)
                 spannable.setSpan(
                     ForegroundColorSpan(Color.BLUE),
                     start1,
