@@ -16,13 +16,8 @@
 
 package com.barnavailability
 
-import android.content.res.Configuration
 import android.os.Bundle
-import android.util.Log
-import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.barnavailability.R
 
 // Change version numbers in build.gradle
 // Build signed apk then copy from C:\Users\simon\AndroidStudioProjects\Barn Availability\app\release
@@ -36,8 +31,4 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
-}
-
-class ActivityMainBinding {
-
 }
