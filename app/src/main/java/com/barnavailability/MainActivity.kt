@@ -25,7 +25,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.barnavailability.R
 
 // Change version numbers in build.gradle
-// Build apk then copy from C:\Users\simon\AndroidStudioProjects\Barn Availability\app\build\outputs\apk\debug
+// Build signed apk then copy from C:\Users\simon\AndroidStudioProjects\Barn Availability\app\release
 
 /**
  * MainActivity sets the content view activity_main, a fragment container that contains
